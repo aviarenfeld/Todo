@@ -18,20 +18,22 @@ $white_opaque: rgba(250, 250, 250, .3);
  $dark: #048B9A;
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 html {
-  height: 100%;
+  height: auto;
+  min-height: 100%;
+  background-attachment: fixed;
 }
 
 body {
- 	height: 100%;
-  background: -webkit-linear-gradient(5deg, #1D96A4 10%, #fbecd6 100%);
-  background:    -moz-linear-gradient(5deg, #1D96A4 10%, #fbecd6 100%);
-  background:     -ms-linear-gradient(5deg, #1D96A4 10%, #fbecd6 100%);
-  background:      -o-linear-gradient(5deg, #1D96A4 10%, #fbecd6 100%);
-  background:         linear-gradient(5deg, #1D96A4 10%, #fbecd6 100%);
-  font-family: 'Lato', sans-serif;
+  height: 100%;
+  background: -webkit-linear-gradient(60deg, #fbecd6 10%, #1D96A4 100%);
+  background:    -moz-linear-gradient(60deg, #fbecd6 10%, #1D96A4 100%);
+  background:     -ms-linear-gradient(60deg, #fbecd6 10%, #1D96A4 100%);
+  background:      -o-linear-gradient(60deg, #fbecd6 10%, #1D96A4 100%);
+  background:         linear-gradient(60deg, #fbecd6 10%, #1D96A4 100%);
+  font-family: 'Raleway', sans-serif;
 }
 
 .clearfix:before,
@@ -59,12 +61,12 @@ body {
 .container {
 	width: 60%;
 	max-width: 750px;
-	background: $white_opaque;
-	margin: 3em auto 0 auto;
-	border-radius: 7px;
+	background: white_opaque;
+	margin: 2em auto 0 auto;
+	border-radius: 30px;
 	-webkit-box-shadow: 0 0 4px 3px rgba(0,0,0,.3);
 	box-shadow: 0 0 4px 4px rgba(0,0,0,.03);
-	padding: 1em 0;
+	padding: 2em 2;
 }
 
 .todo_list_title {
@@ -77,9 +79,9 @@ body {
 	a {
 		text-decoration: none;
 		color: white;
-		transition: all .5s ease-in-out;
+		transition: all .4s ease-in-out;
 		&:hover {
-			opacity: 0.3;
+			opacity: 0.5;
 		}
 	}
 }
@@ -93,10 +95,10 @@ body {
 }
 
 .index_row {
-	padding: 2em;
+	padding: 0.5em;
 	border-bottom: 1px solid rgba(250,250,250, .3);
 	.todo_list_sub_title {
-		margin-bottom: 0;
+		margin-bottom: 0.0;
 	}
 }
 
@@ -105,8 +107,13 @@ body {
 		width: 100%;
 		border-top: 1px solid rgba(250,250,250, .3);
 		border-bottom: 1px solid rgba(250,250,250, .3);
+
+		&:nth-child(even) {
+			background-color: $dark;
+		}
+
 		.complete {
-			width: 10%;
+		   	width: 10%;
 			float: left;
 			text-align: center;
 			border-right: 1px solid rgba(250,250,250, .3);
@@ -118,8 +125,8 @@ body {
 			p {
 				margin: 0;
 				padding: 1em;
-				color: $dark;
-				font-weight: 100;
+				color: black;
+				font-weight: 150;
 			}
 		}
 		.trash {
@@ -138,8 +145,8 @@ body {
 		}
 	}
 	#form {
-		margin-top: 2em;
-		padding: 0 5%;
+		margin-top: 3em;
+		padding: 0 1%;
 		input[type="text"] {
 			width: 72%;
 			margin-right: 2%;
@@ -149,7 +156,7 @@ body {
 			border: none;
 			height: 40px;
 			border-radius: 8px;
-			padding: 1em 2em;
+			padding: 2em 2em;
 		}
 		input[type="submit"] {
 			background: rgba(250,250,250,.4);
@@ -173,11 +180,11 @@ body {
 	display: block;
 	margin: 1.5em auto 0 auto;
 	text-align: center;
-	font-size: 1.0em;
-	color: white;
+	font-size: 1.5em;
+	color: $dark;
 	a {
 		text-decoration: none;
-		color: white;
+		color: $dark;
 		transition: all .5s ease-in-out;
 		&:hover {
 			opacity: 0.3;
@@ -203,7 +210,7 @@ input[type="text"], textarea {
 	padding: 1em 2em;
 }
 textarea {
-	height: 200px;
+	height: 300px;
 }
 input[type="submit"] {
 	background: white;
